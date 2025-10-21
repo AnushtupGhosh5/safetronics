@@ -1,0 +1,10 @@
+## create me a list of sensors and
+| Sensor Type | Specific Model (Example) | Use Case / Role | Approximate Price (₹ Incl. GST) | Links | Datasheet |
+| --- | --- | --- | --- | --- | --- |
+| Visual Inspection | CMOS Camera Module (Need to search a specific one) | Main inspection of cracks, blockages, and corrosion. | R | NaN | CMOS OV7670 Camera Module Pinout, Features, Datasheet, Working, Application, Alternative |
+| Distance / Obstacle | VL53L0X Lidar laser distance sensor | Short-range obstacle detection, measuring distance to pipe wall for centering/navigation. | ₹ 56.00 | https://robu.in/product/vl53l0x-tof-based-lidar-laser-distance-sensor/ | Datasheet - VL53L0X - Time-of-Flight ranging sensor |
+| Orientation / Tilt | MPU-6050 Accelerometer + Gyro | Orientation tracking, tilt measurement (slopes), and movement analysis (IMU). | ₹ 179 | https://robu.in/product/mpu-6050-gyro-sensor-2-accelerometer/ | MPU-6000-Datasheet1.pdf |
+| Environmental | DHT22 Digital T/H Sensor Module | Detect hot-spots, high humidity/condensation, or steam leaks. | ₹ 139 | https://robu.in/product/dht22-am2302-digital-temperature-humidity-sensor/ | DHT22 Datasheet PDF - Humidity & Temperature Sensor |
+| Gas Leak Detection | MQ-7 CO Gas Sensor Module | Detect presence of Carbon Monoxide or other fumes (critical for safety in certain pipes). | ₹ 119 | https://robu.in/product/mq-7-co-carbon-monoxide-coal-gas-sensor-module/ | MQ-7 Carbon Monoxide Coal Gas Sensor Module - Datasheet Hub |
+| Pressure | BMP180/BMP280 Barometric Pressure | Could be used to detect changes in air pressure (like a small leak) or altitude changes in vertical pipes. | ₹ 33.00 (BMP180) | https://robu.in/product/bmp180-digital-barometric-pressure-sensor-module/ | BMP180 Sensor Pinout, Configuration, Specifications, Circuit & Datasheet |
+| Magnetic (Simple) | GY-273 QMC5883L 3 Axis Magnetic Field Sensor | Could be used for basic compass (dead reckoning refinement) or for initial tests of metallic wall sensing (very basic MFL-style testing). | ₹ 129.00 | https://robu.in/product/gy-273-hmc5883l-3-axis-module-magnetic-field-sensor/ | Microsoft Word - 13-52-04 QMC5883L Datasheet Rev. A.doc |
