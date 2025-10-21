@@ -92,6 +92,312 @@ Before fabrication, the following analyses must be conducted:
 
 ---
 
+## 4. HIGH-PRIORITY ADDITIONS FROM RESEARCH PAPER ANALYSIS
+
+### 4.0 New Concepts to Implement (Based on IEEE Paper Review)
+
+The following high-impact concepts from the research paper "An In-pipe Robot with Underactuated Parallelogram Crawler Modules" (Kakogawa et al., 2014) must be evaluated and integrated into the design:
+
+#### 4.0.1 Stopper Pins for Arm Rotation Limit ⚠️ CRITICAL
+**Priority:** HIGH (MVP Critical)  
+**Estimated Time:** 1 hour  
+**Estimated Cost:** ₹20
+
+**Purpose:** Prevent over-rotation and mechanical damage to wall-press mechanism
+
+**Implementation:**
+- Design fixed stopper pins to limit parallelogram arm rotation to 30° maximum
+- Position pins on chassis frame at calculated angle
+- Use M3 bolts or 3D-printed pins as stoppers
+- Ensure arms can still provide full diameter range (75-150mm)
+
+**Benefits:**
+- Prevents mechanism damage from over-extension
+- Defines clear operating range
+- Enables controlled transformation
+- Simple, low-cost safety feature
+
+**Action Items:**
+- [ ] Calculate optimal rotation limit angle (25-30°)
+- [ ] Design stopper pin mounting points in CAD
+- [ ] Add stoppers to wall-press mechanism
+- [ ] Test rotation limits with full load
+
+---
+
+#### 4.0.2 Guide Rollers for Belt/Track Clearance ⚠️ IMPORTANT
+**Priority:** HIGH (If tracks come close to chassis)  
+**Estimated Time:** 2 hours  
+**Estimated Cost:** ₹100
+
+**Purpose:** Prevent caterpillar tracks from touching central chassis when compressed
+
+**Implementation:**
+- Add free-rolling guide rollers at compression points
+- Use small ball bearings (608ZZ or similar) as rollers
+- Mount rollers on chassis where tracks may contact
+- Ensure smooth rotation with minimal friction
+
+**Benefits:**
+- Prevents belt jamming
+- Reduces friction losses
+- Extends belt life
+- Minimal cost addition
+
+**Action Items:**
+- [ ] Identify potential track-chassis contact points in CAD
+- [ ] Design roller mounting brackets
+- [ ] Source small bearings (₹10-15 each)
+- [ ] Test track clearance in all configurations
+
+---
+
+#### 4.0.3 Anterior-Posterior Symmetry Analysis 📊 ANALYSIS REQUIRED
+**Priority:** HIGH (Documentation Critical)  
+**Estimated Time:** 2 hours  
+**Estimated Cost:** ₹0
+
+**Purpose:** Ensure robot can move backward with same performance as forward
+
+**Analysis Required:**
+- Document forward movement capabilities
+- Analyze backward movement performance
+- Identify any asymmetries in design
+- Verify sensor coverage in both directions
+- Check if wall-press works equally in reverse
+
+**Why Critical:**
+- Essential for T-branch navigation
+- Needed for robot retrieval if stuck
+- Important for real-world deployment
+- Competition judges may test reverse movement
+
+**Action Items:**
+- [ ] Create symmetry analysis document
+- [ ] Test forward vs backward traction
+- [ ] Verify sensor placement works in both directions
+- [ ] Document any limitations in reverse
+- [ ] Propose fixes for asymmetries if found
+
+---
+
+#### 4.0.4 Experimental Validation Test Plan 🧪 TESTING PROTOCOL
+**Priority:** HIGH (Pre-Competition Critical)  
+**Estimated Time:** 1 day  
+**Estimated Cost:** ₹200 (test fixtures)
+
+**Purpose:** Validate robot performance before competition
+
+**Test 1: Diameter Change Test**
+- Build test fixture with 75mm to 150mm transition
+- Use PVC pipe increaser or custom 3D-printed transition
+- Document transformation sequence with photos/video
+- Measure forces during transition
+- Verify wall-press adapts smoothly
+
+**Test 2: Partial Step Obstacle Test**
+- Create 20-30mm step obstacle (rubber or wood)
+- Test climbing capability
+- Measure success rate (10 attempts minimum)
+- Document failure modes if any
+- Optimize wall-press force if needed
+
+**Test 3: Comparison Study**
+- Test with and without wall-press mechanism
+- Test with and without guide rollers
+- Document performance differences
+- Justify design complexity with data
+
+**Benefits:**
+- Proof of concept for competition
+- Identifies issues early
+- Provides data for presentation
+- Builds confidence in design
+
+**Action Items:**
+- [ ] Design and build test fixtures
+- [ ] Create test protocol document
+- [ ] Conduct all tests with data logging
+- [ ] Document results with photos/videos
+- [ ] Create test report for competition submission
+
+---
+
+#### 4.0.5 Compliance Elements for Impact Absorption 🔧 ENHANCEMENT
+**Priority:** MEDIUM (Round 2 Enhancement)  
+**Estimated Time:** 3 hours  
+**Estimated Cost:** ₹150
+
+**Purpose:** Protect motors from shock loads and handle misalignment
+
+**Implementation Options:**
+- Add flexible couplings between motors and wheels
+- Use rubber grommets for motor mounting
+- Add spring elements in drivetrain
+- Design flexible inter-module connections
+
+**Benefits:**
+- Protects motors from damage
+- Handles misalignment gracefully
+- No additional sensors needed
+- Improves robustness
+
+**Action Items:**
+- [ ] Research flexible coupling options
+- [ ] Design motor mounting with vibration isolation
+- [ ] Add compliance to inter-module connections
+- [ ] Test impact absorption with drop tests
+
+---
+
+#### 4.0.6 Dead Point Analysis for Linkages 📐 ANALYSIS REQUIRED
+**Priority:** MEDIUM (Design Validation)  
+**Estimated Time:** 2 hours  
+**Estimated Cost:** ₹0
+
+**Purpose:** Ensure parallelogram mechanism doesn't jam at singular positions
+
+**Analysis Required:**
+- Identify potential dead points (0°, 180°, etc.)
+- Calculate linkage geometry to avoid singularities
+- Verify mechanism can pass through all positions
+- Add synchronization if needed (timing belt)
+
+**Why Important:**
+- Prevents mechanism jamming
+- Ensures reliable operation
+- Avoids field failures
+
+**Action Items:**
+- [ ] Perform kinematic analysis of parallelogram linkage
+- [ ] Identify singular positions in CAD
+- [ ] Test mechanism through full range of motion
+- [ ] Add synchronization belt if dead points found
+- [ ] Document safe operating range
+
+---
+
+#### 4.0.7 Gear Ratio Optimization 🔢 PERFORMANCE TUNING
+**Priority:** MEDIUM (Performance Enhancement)  
+**Estimated Time:** 3 hours  
+**Estimated Cost:** ₹0
+
+**Purpose:** Optimize motor performance for speed vs torque
+
+**Analysis Required:**
+- Calculate required torque for vertical climbing
+- Determine optimal wheel diameter
+- Calculate gear ratio for N20 motors
+- Balance speed vs torque for inspection task
+
+**Calculations Needed:**
+- Torque: τ = (m × g × r) / (μ × n)
+- Speed: v = (RPM × π × D) / 60
+- Gear ratio: GR = τ_required / τ_motor
+
+**Action Items:**
+- [ ] Calculate torque requirements for vertical climb
+- [ ] Determine optimal wheel diameter (40-60mm)
+- [ ] Calculate ideal gear ratio for N20 motors
+- [ ] Verify motor selection meets requirements
+- [ ] Document calculations in design report
+
+---
+
+#### 4.0.8 Differential Mechanism Evaluation 🔬 RESEARCH TASK
+**Priority:** LOW (Future Consideration)  
+**Estimated Time:** 4 hours  
+**Estimated Cost:** ₹0 (research only)
+
+**Purpose:** Evaluate if differential mechanism could reduce motor count
+
+**Research Questions:**
+- Can single motor with differential replace multiple motors?
+- What are gear ratio requirements?
+- How does it compare to current 4-motor design?
+- Is complexity justified by cost savings?
+
+**Paper Concept:**
+- Single motor provides driving + arm-lifting
+- Spur gear differential splits power
+- Automatic mode switching (no sensors)
+- Potential cost savings: ₹250-500
+
+**Action Items:**
+- [ ] Study differential mechanism from paper
+- [ ] Calculate gear ratios for implementation
+- [ ] Compare cost: differential vs multiple motors
+- [ ] Assess complexity vs benefit tradeoff
+- [ ] Document findings for future iterations
+
+---
+
+#### 4.0.9 Underactuated System Exploration 🔬 ADVANCED CONCEPT
+**Priority:** LOW (Round 3 / Future)  
+**Estimated Time:** 2 weeks  
+**Estimated Cost:** ₹-300 (potential savings)
+
+**Purpose:** Reduce motor count using mechanical intelligence
+
+**Concept:**
+- Use passive mechanisms instead of active motors
+- Leverage springs, linkages, and gravity
+- Automatic adaptation without sensors
+- Reduce cost, weight, and complexity
+
+**Potential Benefits:**
+- Reduce from 4 motors to 2-3 motors
+- Cost savings: ₹250-500
+- Weight reduction: 100-150g
+- Simpler control system
+
+**Challenges:**
+- Major redesign required
+- Complex mechanical design
+- May not be feasible for MVP timeline
+
+**Action Items:**
+- [ ] Study underactuated mechanisms from paper
+- [ ] Evaluate feasibility for WorkSafeBot
+- [ ] Create proof-of-concept CAD model
+- [ ] Compare with current design
+- [ ] Recommend for future iterations if beneficial
+
+---
+
+#### 4.0.10 Transformable Crawler Design 🔬 ADVANCED CONCEPT
+**Priority:** LOW (Round 3 / Future)  
+**Estimated Time:** 2 weeks  
+**Estimated Cost:** ₹500+
+
+**Purpose:** Enable crawler tracks to change shape for enhanced mobility
+
+**Concept:**
+- Parallelogram-shaped crawler tracks (not just wall-press)
+- Tracks transform from flat to raised configuration
+- Maintains constant belt length during transformation
+- Better obstacle climbing and diameter adaptation
+
+**Potential Benefits:**
+- Increased diameter adaptation range
+- Better obstacle climbing capability
+- Maintains traction during transformation
+- Anterior-posterior symmetry
+
+**Challenges:**
+- Major redesign of traction system
+- Complex belt length management
+- Requires synchronization mechanism
+- May exceed budget and timeline
+
+**Action Items:**
+- [ ] Study parallelogram crawler from paper
+- [ ] Evaluate if needed for competition
+- [ ] Consider for Round 3 if time permits
+- [ ] Document as future enhancement
+
+---
+
 ## 4. Locomotion System Design
 
 ### 4.1 Drive Mechanism Selection
@@ -452,10 +758,194 @@ The mechanical subsystem will be considered successful when:
 
 ---
 
-**Document Status:** ✅ Ready for Implementation  
-**Next Steps:** Begin CAD modeling and design review with team
+---
+
+## 18. IMMEDIATE ACTION ITEMS FOR MECHANICAL ENGINEER
+
+### 18.1 HIGH PRIORITY - Do This Week (MVP Critical)
+
+#### Task 1: Add Stopper Pins ⚠️ URGENT
+**Time:** 1 hour | **Cost:** ₹20 | **Difficulty:** Easy
+
+**What to do:**
+1. Open wall-press mechanism CAD model
+2. Calculate 30° rotation limit from neutral position
+3. Add M3 bolt holes or pin slots at limit positions
+4. Test mechanism doesn't exceed 30° rotation
+5. Verify full diameter range (75-150mm) still achievable
+
+**Why critical:** Prevents mechanism damage during testing
+
+---
+
+#### Task 2: Anterior-Posterior Symmetry Analysis 📊 URGENT
+**Time:** 2 hours | **Cost:** ₹0 | **Difficulty:** Medium
+
+**What to do:**
+1. Create document: "Forward-Backward Symmetry Analysis"
+2. List all components and their orientation
+3. Check if sensors work in both directions
+4. Verify wall-press works equally in reverse
+5. Test traction in forward vs backward
+6. Document any asymmetries found
+7. Propose fixes if needed
+
+**Why critical:** Competition may test reverse movement; needed for T-branches
+
+---
+
+#### Task 3: Create Test Plan & Build Fixtures 🧪 URGENT
+**Time:** 1 day | **Cost:** ₹200 | **Difficulty:** Medium
+
+**What to do:**
+1. Design diameter transition fixture (75mm → 150mm)
+2. Build step obstacle (20-30mm height)
+3. Create test protocol document with:
+   - Test procedures
+   - Success criteria
+   - Data logging format
+   - Photo/video requirements
+4. Schedule testing sessions
+5. Prepare data collection tools
+
+**Why critical:** Need proof of concept before Round 1 submission (Oct 31)
+
+---
+
+#### Task 4: Check for Guide Roller Needs 🔍 IMPORTANT
+**Time:** 1 hour | **Cost:** ₹0-100 | **Difficulty:** Easy
+
+**What to do:**
+1. Open CAD model with tracks at minimum diameter (75mm)
+2. Check if tracks touch chassis anywhere
+3. If yes, design guide roller mounting points
+4. Source small bearings (608ZZ, ₹10-15 each)
+5. Add rollers to design
+
+**Why critical:** Prevents track jamming during operation
+
+---
+
+### 18.2 MEDIUM PRIORITY - Do Next Week (Enhancement)
+
+#### Task 5: Dead Point Analysis 📐
+**Time:** 2 hours | **Cost:** ₹0 | **Difficulty:** Medium
+
+**What to do:**
+1. Perform kinematic analysis of parallelogram linkage
+2. Identify singular positions (dead points)
+3. Test mechanism manually through full range
+4. Document safe operating range
+5. Add synchronization belt if needed
+
+---
+
+#### Task 6: Gear Ratio Optimization 🔢
+**Time:** 3 hours | **Cost:** ₹0 | **Difficulty:** Hard
+
+**What to do:**
+1. Calculate torque for vertical climbing: τ = (m × g × r) / (μ × n)
+2. Determine optimal wheel diameter
+3. Calculate ideal gear ratio for N20 motors
+4. Verify current motor selection adequate
+5. Document calculations in design report
+
+---
+
+#### Task 7: Add Compliance Elements 🔧
+**Time:** 3 hours | **Cost:** ₹150 | **Difficulty:** Medium
+
+**What to do:**
+1. Research flexible couplings for motors
+2. Add rubber grommets to motor mounts
+3. Design flexible inter-module connections
+4. Test impact absorption
+5. Document improvements
+
+---
+
+### 18.3 LOW PRIORITY - Research for Future (Round 2/3)
+
+#### Task 8: Differential Mechanism Research 🔬
+**Time:** 4 hours | **Cost:** ₹0 | **Difficulty:** Hard
+
+**What to do:**
+1. Study differential mechanism from IEEE paper
+2. Calculate gear ratios needed
+3. Compare cost vs current 4-motor design
+4. Assess if complexity justified
+5. Document for future consideration
+
+---
+
+#### Task 9: Underactuated System Evaluation 🔬
+**Time:** 2 weeks | **Cost:** TBD | **Difficulty:** Very Hard
+
+**What to do:**
+1. Deep dive into underactuated mechanisms
+2. Create proof-of-concept CAD
+3. Compare with current design
+4. Recommend for future iterations
+
+---
+
+#### Task 10: Transformable Crawler Concept 🔬
+**Time:** 2 weeks | **Cost:** ₹500+ | **Difficulty:** Very Hard
+
+**What to do:**
+1. Study parallelogram crawler from paper
+2. Evaluate if needed for competition
+3. Consider for Round 3 if time permits
+
+---
+
+### 18.4 Quick Reference Checklist
+
+**This Week (Before Oct 25):**
+- [ ] Add stopper pins to wall-press mechanism
+- [ ] Complete symmetry analysis document
+- [ ] Build test fixtures (diameter change + step obstacle)
+- [ ] Check and add guide rollers if needed
+- [ ] Create test protocol document
+
+**Next Week (Before Nov 1):**
+- [ ] Conduct all experimental tests
+- [ ] Document test results with photos/videos
+- [ ] Perform dead point analysis
+- [ ] Optimize gear ratios
+- [ ] Add compliance elements
+
+**Before Round 1 Submission (Oct 31):**
+- [ ] Test report with data and photos
+- [ ] Symmetry analysis document
+- [ ] Updated CAD with stoppers and rollers
+- [ ] Performance validation data
+
+---
+
+### 18.5 Communication Protocol
+
+**Daily Updates:**
+- Post progress in team chat
+- Share CAD screenshots of changes
+- Flag any blockers immediately
+
+**Weekly Review:**
+- Present completed tasks
+- Show test results
+- Discuss next week priorities
+
+**Documentation:**
+- Update this task list as you complete items
+- Add photos/videos to shared drive
+- Keep design notes in CAD comments
+
+---
+
+**Document Status:** ✅ Updated with Research Paper Concepts  
+**Next Steps:** Mechanical engineer to start with HIGH PRIORITY tasks immediately
 
 ---
 
 *This document is maintained by the Mechanical Team and updated as the project progresses.*  
-*Last Updated: October 21, 2025*
+*Last Updated: October 21, 2025 - Added high-impact concepts from IEEE paper analysis*
