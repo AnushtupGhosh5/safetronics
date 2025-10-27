@@ -160,10 +160,10 @@ Motor speed adjustment = Base_speed × (1 - |turn_angle| / 90°)
 | Test Category | Method | Success Criteria | Status |
 |---------------|--------|------------------|--------|
 | **Sensor Accuracy** | Compare with calibrated instruments | ±5% error | ✅ Datasheet verified |
-| **Gas Detection** | Ethanol vapor exposure | Alert within 2s | 🔄 Round 2 |
+| **Gas Detection** | Ethanol vapor exposure | Alert within 5s | 🔄 Round 2 |
 | **Obstacle Avoidance** | Maze navigation | 90% success rate | 🔄 Round 2 |
-| **Pipe Navigation** | 75mm/100mm/150mm pipes | Complete traversal | 🔄 Round 2 |
-| **Battery Runtime** | Continuous operation | >60 min | 🔄 Round 2 |
+| **Pipe Navigation** | 4.47 - 6.34 inches pipes  | Complete traversal | 🔄 Round 2 |
+| **Battery Runtime** | Continuous operation | 18.8 min | 🔄 Round 2 |
 | **MQTT Latency** | Network analyzer | <500ms | 🔄 Round 2 |
 | **Risk Algorithm** | Simulated hazard scenarios | Correct classification | 🔄 Round 2 |
 | **Structural Integrity** | Drop test (30cm) | No component damage | 🔄 Round 2 |
